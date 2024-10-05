@@ -21,6 +21,9 @@ jobs:
         with:
           python-version: '3.9'  # Możesz określić konkretną wersję Pythona, np. '3.8'
 
+      - name: Install dependencies
+        run: pip install -r requirements.txt 
+
       # Uruchomienie skryptu load_data.py
       - name: Run load_data.py
         run: python src/load_data.py
