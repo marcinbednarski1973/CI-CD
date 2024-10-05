@@ -2,7 +2,9 @@
 
 name: Show File Content
 
-on: [push]
+on: 
+  push:
+    branches: ['main']
 
 jobs:
   show-file:
@@ -11,7 +13,7 @@ jobs:
     steps:
       # Sprawdzanie repozytorium
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Wyświetlenie zawartości pliku plik.txt
       - name: Show content of plik.txt
