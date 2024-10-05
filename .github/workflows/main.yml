@@ -1,0 +1,20 @@
+# This is a basic workflow that is manually triggered
+
+name: Show File Content
+
+on: 
+  push:
+    branches: ['main']
+
+jobs:
+  show-file:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Sprawdzanie repozytorium
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Wyświetlenie zawartości pliku plik.txt
+      - name: Show content of plik.txt
+        run: cat plik.txt
