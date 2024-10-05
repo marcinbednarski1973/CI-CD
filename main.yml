@@ -10,11 +10,25 @@ jobs:
   show-file:
     runs-on: ubuntu-latest
 
+    name: Run Python Script
+
+on: [push]
+
+jobs:
+  run-python-script:
+    runs-on: ubuntu-latest
+
     steps:
       # Sprawdzanie repozytorium
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      # Wyświetlenie zawartości pliku plik.txt
-      - name: Show content of plik.txt
-        run: cat plik.txt
+      # Instalacja Pythona (jeśli jest wymagane użycie określonej wersji)
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'  # Możesz określić konkretną wersję Pythona, np. '3.8'
+
+      # Uruchomienie skryptu load_data.py
+      - name: Run load_data.py
+        run: python load_data.py
