@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 def load_data():
-  df = pd.read_csv('/Users/Iceberg9/CI-CD/data/otodom.csv')
+  df = pd.read_csv('data/otodom.csv')
   df = df[df['price'].notna()]
   X = df[['area']]
   y = df['price']
